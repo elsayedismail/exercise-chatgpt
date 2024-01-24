@@ -28,10 +28,9 @@ public class MainActivity extends AppCompatActivity {
 
     TextView generate,answer;
     EditText question;
-    private boolean isMaxTokensEnabled = false;
+   
 
-    String stringUrl= "\n" +
-            "https://api.openai.com/v1/chat/completions";
+    String stringUrl= "https://api.openai.com/v1/chat/completions";
     //String apiKey ="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";
     String stringOutput ="";
     public static final MediaType Json =
@@ -84,9 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
             jsonBody.put("messages",jsonArrayMessage);
             jsonBody.put("temperature", 0.0);
-            if (isMaxTokensEnabled) {
-                jsonBody.put("max_tokens", 0.0);
-            }
+            
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
