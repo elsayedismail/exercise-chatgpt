@@ -100,20 +100,20 @@ public class MainActivity extends AppCompatActivity {
                 .header("Authorization","Bearer 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")
                 .post(body)
                 .build();
-        Log.d("request","built");
+        
 
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 //   Toast.makeText(getApplicationContext(),"failed answering due to "+e.getMessage(),Toast.LENGTH_LONG).show();
-                Log.d("request","fail");
+              
             }
 
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
 
                 if (response.isSuccessful()){
-                    Log.d("response","successful");
+                    
 
                     JSONObject jsonObject =null;
                     try {
@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else {
                     //  Toast.makeText(getApplicationContext(),"failed answering due to "+response.body().toString(),Toast.LENGTH_LONG).show();
-                    Log.d("response","failed response");
+                   
 
                 }
 
